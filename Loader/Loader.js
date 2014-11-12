@@ -32,6 +32,9 @@ function Loader() {
 	this.runApp = function() {
 		System.paths.jquery = directoryPath + '../Lib/jquery/dist/jquery.min.js';
 		System.paths.lodash = directoryPath + '../Lib/lodash/dist/lodash.min.js';
+		System.paths.ractive = directoryPath + '../Lib/ractive/ractive.js';
+		System.paths.mustache = directoryPath + 'Ractive.js';
+
 		System.paths['underscore.string'] = directoryPath + '../Lib/underscore.string/dist/underscore.string.min.js';
 		System.paths['ES6MVC/*'] = directoryPath + '../*.js';
 
