@@ -9,6 +9,5 @@ export default class Controller {
 		this.options = options;
 
 		this.element.addClass(_s.underscored(this.constructor.name) + '_controller');
-		debugger;
 	}
 }
