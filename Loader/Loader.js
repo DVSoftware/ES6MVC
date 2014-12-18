@@ -4,7 +4,7 @@
  */
 
 function Loader() {
-	var scripts, currentScript, currentScript, currentPath, directory, head, a;
+	var scripts, currentScript, currentScript, currentPath, directory, head, a, isLocal;
 
 	scripts       = document.getElementsByTagName('script');
 	currentScript = scripts[scripts.length - 1];
@@ -16,7 +16,12 @@ function Loader() {
 
 	currentScriptPath = a.pathname + a.search;
 	directoryPath     = currentScriptPath.substring(1, currentScriptPath.lastIndexOf('/') + 1);
+	isLocal           = directoryPath.indexOf('Loader/') === 0;
 	head              = document.getElementsByTagName('head')[0];
+
+	if (isLocal) {
+		directoryPath = '../' + directoryPath;
+	}
 
 	this.loadScript = function (path, cb) {
 		var script = document.createElement('script');
